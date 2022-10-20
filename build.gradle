@@ -1,0 +1,29 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.3'
+	id 'io.spring.dependency-management' version '1.0.13.RELEASE'
+	id 'java'
+}
+
+group = 'hello'
+//해당 repo의 배포버전이라 보면 될듯.
+version = '0.0.1-SNAPSHOT'
+//java version
+sourceCompatibility = '11'
+
+repositories {
+	//아래의 라이브러리를 다운로드 받는 endpoint
+	mavenCentral()
+}
+
+//의존성 추가 후 반영하려면, 우측 Gralde의 reload
+dependencies {
+	runtimeOnly 'org.springframework.boot:spring-boot-devtools'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	//자동으로 test라이브러리 추가
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

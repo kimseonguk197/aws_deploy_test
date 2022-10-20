@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<!--아래 선언을 통해 타임리프 사용가능-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Getting Started: Serving Web Content</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<!--th는 타임리프 의미-->
+<!--타임리프에 의해 th부분의 값이 p태그 사이에 들어가서 출력되게 된다.-->
+<p th:text="'Hello-mvc ' + ${name} + '!'"></p>
+</body>
+</html>

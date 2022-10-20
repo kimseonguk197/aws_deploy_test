@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+
+  jartest:
+#    이미지를 빌드하면서 띄울경우는 아래와 같이
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#    이미 만들어놓은 이미지가 있다면 아래와 같이.
+    image: java_test:test
+    ports:
+      - 8080:8080
+    restart: always
+    volumes:
+      - ./:/app/
