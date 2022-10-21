@@ -28,6 +28,7 @@ tasks.named('test') {
 	useJUnitPlatform()
 }
 
+//plain jar 파일은 만들어지지 않도록 build.gradle 파일에 다음 내용을 추가
 jar {
     enabled = false
 }
