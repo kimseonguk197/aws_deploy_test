@@ -15,6 +15,7 @@ cp $PROJECT_ROOT/build/libs/*.jar $JAR_FILE
 
 # jar 파일 실행
 echo "$TIME_NOW > $JAR_FILE 파일 실행" >> $DEPLOY_LOG
+#nohup과 &는 백그라운드 실행을 의미, 2> : 표준 에러(2)를 $ERROR_LOG로 리다이렉트
 nohup java -jar $JAR_FILE > $APP_LOG 2> $ERROR_LOG &
 
 CURRENT_PID=$(pgrep -f $JAR_FILE)
